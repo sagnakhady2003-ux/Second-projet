@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homme</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts pour la typographie élégante -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif'],
+                    },
+                    colors: {
+                        brandBlue: '#3353D8',
+                        brandGold: '#F2B84B',
+                        brandGoldHover: '#E0A435',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Effet subtil sur l'image hero pour garantir la lisibilité du texte blanc */
+        .hero-gradient {
+            background: linear-gradient(90deg, rgba(0,0,0,0.32) 0%, rgba(0,0,0,0.12) 50%, rgba(0,0,0,0) 100%);
+        }
+    </style>
+</head>
+<body class="bg-amber-50 text-gray-800 antialiased">
+
+    <!-- 1. Barre supérieure (Top Bar) -->
+    <div class="bg-blue-900 text-white text-xs py-4 px-4 text-center font-medium tracking-wide">
+        <div class="inline-flex items-center justify-center gap-1.5">
+            <!-- Icône de localisation -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 text-white/90" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+            </svg>
+            <span>186 Avenue Lamine Gueye</span>
+        </div>
+    </div>
+
+    
+    <header class="top-0 z-50 bg-amber-50 py-4">
+        <div class="max-w-7xl mx-auto px-6 sm:px-10 h-24 flex items-center justify-between">
+            
+        
+            <button id="mobile-menu-btn" class="md:hidden text-gray-700 hover:text-brandBlue focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+
+        
+            <a href="#" class="flex items-center group">
+                <div class="w-20 h-20 rounded-full flex flex-col items-center justify-center text-center leading-none transition-transform duration-300 group-hover:scale-105">
+                <img src="img/image1.png" alt="">
+                </div>
+            </a>
+
+        
+            <nav class="hidden md:flex items-center space-x-10 text-sm font-semibold text-black">
+                <a href="homme.html" class="hover:text-blue-900 transition-colors">Hommes</a>
+                <a href="femme.html" class="hover:text-blue-900 transition-colors">Femmes</a>
+                <a href="accessoire.html" class="hover:text-blue-900 transition-colors">Accessoires</a>
+                <a href="histoire.html" class="hover:text-blue-900 transition-colors">Notre Histoire</a>
+                <a href="contact.html" class="hover:text-blue-900 transition-colors">Contact</a>
+            </nav>
+
+            
+            <div class="flex items-center space-x-5 text-gray-600">
+                
+                <button id="search-toggle" aria-label="Rechercher" class="hover:text-brandBlue transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                </button>
+
+                
+                <button onclick="alert('Espace client : Connexion ou Inscription')" aria-label="Compte" class="hover:text-brandBlue transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                    </svg>
+                </button>
+
+                
+                <button id="cart-toggle" aria-label="Panier" class="relative hover:text-brandBlue transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                    </svg>
+                    <span id="cart-count" class="hidden absolute -top-1.5 -right-2 bg-brandBlue text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">0</span>
+                </button>
+            </div>
+        </div>
+
+        
+       <div id="search-bar" class="hidden bg-gray-50 border-t border-gray-100 py-3 px-6 transition-all">
+            <div class="max-w-3xl mx-auto flex items-center gap-3">
+                <input type="text" id="search-input" placeholder="Rechercher des richelieus, derbies, mocassins..." class="w-full bg-white border border-gray-300 rounded-full px-4 py-2 text-sm focus:outline-none focus:border-brandBlue">
+                <button id="search-close" class="text-gray-500 hover:text-gray-800 text-sm font-medium">Fermer</button>
+            </div>
+        </div>
+
+    
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-6 py-4 space-y-3 text-sm font-medium text-brandBlue">
+        <a href="homme.html" class="block py-1">Hommes</a>
+        <a href="femme.html" class="block py-1">Femmes</a>
+        <a href="accessoire.html" class="block py-1">Accessoires</a>
+         <a href="histoire.html" class="block py-1">Notre Histoire</a>
+        <a href="contact.html" class="block py-1">Contact</a>
+        </div>
+    </header>
+
+
+<!-- Section Catalogue Complète (6 lignes de 4 photos) -->
+<section id="hommes-catalogue" class="max-w-7xl mx-auto px-6 sm:px-10 py-16">
+    
+    <!-- En-tête de section -->
+    <div class="flex items-end justify-center mb-8">
+        <h2 class="text-3xl font-bold text-gray-900 tracking-tight">Hommes</h2>
+        
+    </div>
+
+
+    <!-- Barre de filtres et de tri -->
+<div class="max-w-7xl mx-auto px-6 sm:px-10 mb-8">
+    <div class="grid grid-cols-1 md:grid-cols-3 items-center gap-4 py-4">
+        
+        <!-- 1. Colonne de Gauche : "En stock uniquement" -->
+        <div class="flex items-center justify-start">
+            <label class="flex items-center cursor-pointer select-none">
+                <span class="text-xl font-semibold text-blue-900 mr-3">En stock uniquement</span>
+                <input type="checkbox" class="sr-only peer" onchange="filtrerStock(this)">
+                <div class="w-11 h-6 bg-brandBlue peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-brandBlue after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-gray-900 relative"></div>
+            </label>
+        </div>
+
+        <!-- 2. Colonne du Milieu : Menu déroulant "Prix" -->
+        <div class="flex items-center justify-start md:justify-center">
+            <div class="relative w-full sm:w-auto">
+                <select class="appearance-none bg-transparent text-xl font-semibold text-blue-900 rounded-lg focus:outline-none cursor-pointer
+                sm:w-auto">
+                    <option value="" disabled selected>Prix</option>
+                    <option value="croissant">Prix : Croissant</option>
+                    <option value="decroissant">Prix : Décroissant</option>
+                </select>
+                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-500">
+                    <i class="fas fa-chevron-down text-xs"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. Colonne de Droite : "Trier par : Meilleures ventes" -->
+        <div class="flex items-center justify-start md:justify-end space-x-2">
+            <span class="text-xl text-blue-900">Trier par :</span> Meilleures Ventes
+            <div class="relative">
+                <select class="appearance-none bg-transparent text-sm font-bold text-gray-900 py-1.5 pl-2 pr-8 rounded-lg focus:outline-none cursor-pointer">
+                </select>
+                <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-500">
+                    <i class="fas fa-chevron-down text-xs"></i>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<!-- Grille : 4 colonnes sur PC/tablette, 2 colonnes sur mobile -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+        
+        <!-- LIGNE 1 -->
+        <!-- Produit 1 -->
+        <div class="group cursor-pointer" onclick="addToCart('GOOR2.0', 65000)">
+            <div class="aspect-square rounded-xl overflow-hidden bg-gray-100 mb-3">
+                <img src="img/image6.png" alt="GOOR2.0" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            </div>
+            <h3 class="font-bold text-gray-900 text-sm md:text-base">GOOR2.0</h3>
+            <p class="text-xs md:text-sm font-medium text-gray-500 mt-1">65,000 F CFA</p>
+        </div>
+
+        <!-- Produit 2 -->
+        <div class="group cursor-pointer" onclick="addToCart('LAYE', 35000)">
+            <div class="aspect-square rounded-xl overflow-hidden bg-gray-100 mb-3">
+                <img src="img/image7.png" alt="LAYE" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            </div>
+            <h3 class="font-bold text-gray-900 text-sm md:text-base">LAYE</h3>
+            <p class="text-xs md:text-sm font-medium text-gray-500 mt-1">35,000 F CFA</p>
+        </div>
+
+        <!-- Produit 3 -->
+        <div class="group cursor-pointer" onclick="addToCart('ALI', 55000)">
+            <div class="aspect-square rounded-xl overflow-hidden bg-gray-100 mb-3">
+                <img src="img/image8.png" alt="ALI" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            </div>
+            <h3 class="font-bold text-gray-900 text-sm md:text-base">ALI</h3>
+            <p class="text-xs md:text-sm font-medium text-gray-500 mt-1">55,000 F CFA</p>
+        </div>
+
+        <!-- Produit 4 -->
+        <div class="group cursor-pointer" onclick="addToCart('JAMBAR', 55000)">
+            <div class="aspect-square rounded-xl overflow-hidden bg-gray-100 mb-3">
+                <img src="img/image9.png" alt="JAMBAR" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            </div>
+            <h3 class="font-bold text-gray-900 text-sm md:text-base">JAMBAR</h3>
+            <p class="text-xs md:text-sm font-medium text-gray-500 mt-1">55,000 F CFA</p>
+        </div>
+
+
+        <!-- LIGNE 2 -->
+        <!-- Produit 5 -->
+        <div class="group cursor-pointer" onclick="addToCart('Adama', 55000)">
+            <div class="aspect-square rounded-xl overflow-hidden bg-gray-100 mb-3">
+                <img src="img/image10.png" alt="Adama" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            </div>
+            <h3 class="font-bold text-gray-900 text-sm md:text-base">BUUR</h3>
+            <p class="text-xs md:text-sm font-medium text-gray-500 mt-1">55,000 F CFA</p>
+        </div>
+
+        <!-- Produit 6 -->
+        <div class="group cursor-pointer" onclick="addToCart('Modèle 6', 45000)">
+            <div class="aspect-square rounded-xl overflow-hidden bg-gray-100 mb-3">
+                <img src="img/image11.png" alt="Modèle 6" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            </div>
+            <h3 class="font-bold text-gray-900 text-sm md:text-base">Adama</h3>
+            <p class="text-xs md:text-sm font-medium text-gray-500 mt-1">45,000 F CFA</p>
+        </div>
+
+        <!-- Produit 7 -->
+        <div class="group cursor-pointer" onclick="addToCart('Modèle 7', 35000)">
+            <div class="aspect-square rounded-xl overflow-hidden bg-gray-100 mb-3">
+                <img src="img/image12.png" alt="Modèle 7" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            </div>
+            <h3 class="font-bold text-gray-900 text-sm md:text-base">Porte Monnaie Homme</h3>
+            <p class="text-xs md:text-sm font-medium text-gray-500 mt-1">35,000 F CFA</p>
+        </div>
+
+        <!-- Produit 8 -->
+        <div class="group cursor-pointer" onclick="addToCart('Modèle 8', 65000)">
+            <div class="aspect-square rounded-xl overflow-hidden bg-gray-100 mb-3">
+                <img src="img/image13.png" alt="Modèle 8" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            </div>
+            <h3 class="font-bold text-gray-900 text-sm md:text-base">ELHADJI2.0</h3>
+            <p class="text-xs md:text-sm font-medium text-gray-500 mt-1">65,000 F CFA</p>
+        </div>
+
+
+        <!-- LIGNE 3 -->
+        <!-- Produit 9 -->
+        <div class="group cursor-pointer" onclick="addToCart('Modèle 9', 55000)">
+            <div class="aspect-square rounded-xl overflow-hidden bg-gray-100 mb-3">
+                <img src="https://momolebottier.com/cdn/shop/files/DSC08643.jpg?v=1748278178&width=600" alt="Modèle 9" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            </div>
+            <h3 class="font-bold text-gray-900 text-sm md:text-base">JUNIOR</h3>
+            <p class="text-xs md:text-sm font-medium text-gray-500 mt-1">55,000 F CFA</p>
+        </div>
+
+        <!-- Produit 10 -->
+        <div class="group cursor-pointer" onclick="addToCart('Modèle 10', 65000)">
+            <div class="aspect-square rounded-xl overflow-hidden bg-gray-100 mb-3">
+                <img src="https://momolebottier.com/cdn/shop/files/IMG_2714_1ff83556-e0e2-459b-a5ad-21dfb085f428.jpg?v=1763631564&width=600" alt="Modèle 10" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            </div>
+            <h3 class="font-bold text-gray-900 text-sm md:text-base">ALI2.0</h3>
+            <p class="text-xs md:text-sm font-medium text-gray-500 mt-1">65,000 F CFA</p>
+        </div>
+
+        <!-- Produit 11 -->
+        <div class="group cursor-pointer" onclick="addToCart('Modèle 11', 55000)">
+            <div class="aspect-square rounded-xl overflow-hidden bg-gray-100 mb-3">
+                <img src="https://momolebottier.com/cdn/shop/files/IMG_7149.jpg?v=1779368073&width=600" alt="Modèle 11" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            </div>
+            <h3 class="font-bold text-gray-900 text-sm md:text-base">KEBA</h3>
+            <p class="text-xs md:text-sm font-medium text-gray-500 mt-1">55,000 F CFA</p>
+        </div>
+
+        <!-- Produit 12 -->
+        <div class="group cursor-pointer" onclick="addToCart('Modèle 12', 165000)">
+            <div class="aspect-square rounded-xl overflow-hidden bg-gray-100 mb-3">
+                <img src="https://momolebottier.com/cdn/shop/files/IMG_8424.jpg?v=1781888808&width=600" alt="Modèle 12" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            </div>
+            <h3 class="font-bold text-gray-900 text-sm md:text-base">MW 26</h3>
+            <p class="text-xs md:text-sm font-medium text-gray-500 mt-1">165,000 F CFA</p>
+        </div>
+
+
+        <!-- LIGNE 4 -->
+        <!-- Produit 13 -->
+        <div class="group cursor-pointer" onclick="addToCart('Modèle 13', 95000)">
+            <div class="aspect-square rounded-xl overflow-hidden bg-gray-100 mb-3">
+                <img src="https://momolebottier.com/cdn/shop/files/MLB_PROD_200825_-362.jpg?v=1756811767&width=600" alt="Modèle 13" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            </div>
+            <h3 class="font-bold text-gray-900 text-sm md:text-base">MC24</h3>
+            <p class="text-xs md:text-sm font-medium text-gray-500 mt-1">95,000 F CFA</p>
+        </div>
+
+        <!-- Produit 14 -->
+        <div class="group cursor-pointer relative" onclick="addToCart('TESTM', 2000)">
+            <!-- Badge "Économisez 3,000 F CFA" -->
+            <span class="absolute top-2 left-2 z-10 bg-brandBlue text-white text-[10px] font-bold px-2 py-0.5 rounded-full shadow-xs">
+                Économisez 3,000 F CFA
+            </span>
+            <div class="aspect-square rounded-xl overflow-hidden bg-gray-100 mb-3">
+                <img src="img/image24.png" alt="TESTM" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            </div>
+            <h3 class="font-bold text-gray-900 text-sm md:text-base">TESTM</h3>
+            <p class="text-xs md:text-sm font-medium text-gray-500 mt-1">
+                <span class="text-gray-500 font-bold">2,000 F CFA</span> 
+                <span class="line-through text-gray-400 ml-1">5,000 F CFA</span>
+            </p>
+        </div>
+        <!-- Produit 15 -->
+        <div class="group cursor-pointer" onclick="addToCart('Modèle 15', 95000)">
+            <div class="aspect-square rounded-xl overflow-hidden bg-gray-100 mb-3">
+                <img src="https://momolebottier.com/cdn/shop/files/IMG_6059.jpg?v=1707578363&width=600" alt="Modèle 15" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            </div>
+            <h3 class="font-bold text-gray-900 text-sm md:text-base">E-BIRAM</h3>
+            <p class="text-xs md:text-sm font-medium text-gray-500 mt-1">95,000 F CFA</p>
+        </div>
+
+        <!-- Produit 16 -->
+         <div class="group cursor-pointer" onclick="addToCart('Ceinture', 55000)">
+            <div class="aspect-square rounded-xl overflow-hidden bg-gray-100 mb-3">
+                <img src="img/image25.png" alt="Ceinture" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            </div>
+            <h3 class="font-bold text-gray-900 text-sm md:text-base">Ceinture</h3>
+            <p class="text-xs md:text-sm font-medium text-gray-500 mt-1">55,000 F CFA</p>
+        </div>
+
+
+        <!-- LIGNE 5 -->
+        <!-- Produit 17 -->
+
+         <div class="group cursor-pointer" onclick="addToCart('ABDOUL', 65000)">
+            <div class="aspect-square rounded-xl overflow-hidden bg-gray-100 mb-3">
+                <img src="img/image19.png" alt="ABDOUL" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            </div>
+            <h3 class="font-bold text-gray-900 text-sm md:text-base">ABDOUL</h3>
+            <p class="text-xs md:text-sm font-medium text-gray-500 mt-1">65,000 F CFA</p>
+        </div>
+
+
+        <!-- Produit 18 -->
+        <div class="group cursor-pointer" onclick="addToCart('Modèle 18', 55000)">
+            <div class="aspect-square rounded-xl overflow-hidden bg-gray-100 mb-3">
+                <img src="https://momolebottier.com/cdn/shop/files/IMG_6653.jpg?v=1777457514&width=600" alt="Modèle 18" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            </div>
+            <h3 class="font-bold text-gray-900 text-sm md:text-base">BADA</h3>
+            <p class="text-xs md:text-sm font-medium text-gray-500 mt-1">55,000 F CFA</p>
+        </div>
+
+        <!-- Produit 19 -->
+        <div class="group cursor-pointer" onclick="addToCart('Modèle 19', 55000)">
+            <div class="aspect-square rounded-xl overflow-hidden bg-gray-100 mb-3">
+                <img src="https://momolebottier.com/cdn/shop/files/3E2EB0B7-DBCB-48DD-A850-5485BF1EB0D8_2061ff11-bb8e-4289-859b-da93058aa2e9.jpg?v=1707569779&width=600" alt="Modèle 19" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            </div>
+            <h3 class="font-bold text-gray-900 text-sm md:text-base">MOMO20</h3>
+            <p class="text-xs md:text-sm font-medium text-gray-500 mt-1">55,000 F CFA</p>
+        </div>
+
+        <!-- Produit 20 -->
+        <div class="group cursor-pointer" onclick="addToCart('Modèle 20', 65000)">
+            <div class="aspect-square rounded-xl overflow-hidden bg-gray-100 mb-3">
+                <img src="https://momolebottier.com/cdn/shop/files/MLB_PROD_200825_-219.jpg?v=1756814124&width=600" alt="Modèle 20" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            </div>
+            <h3 class="font-bold text-gray-900 text-sm md:text-base">ada</h3>
+            <p class="text-xs md:text-sm font-medium text-gray-500 mt-1">65,000 F CFA</p>
+        </div>
+
+
+        <!-- LIGNE 6 -->
+        <!-- Produit 21 -->
+        <div class="group cursor-pointer" onclick="addToCart('Modèle 21', 55000)">
+            <div class="aspect-square rounded-xl overflow-hidden bg-gray-100 mb-3">
+                <img src="https://momolebottier.com/cdn/shop/files/9b74bb96-80c7-4267-a8fb-4f3231b82e47.jpg?v=1779368292&width=600" alt="Modèle 21" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            </div>
+            <h3 class="font-bold text-gray-900 text-sm md:text-base">HASSIM</h3>
+            <p class="text-xs md:text-sm font-medium text-gray-500 mt-1">55,000 F CFA</p>
+        </div>
+
+        <!-- Produit 22 -->
+        <div class="group cursor-pointer" onclick="addToCart('Modèle 22', 95000)">
+            <div class="aspect-square rounded-xl overflow-hidden bg-gray-100 mb-3">
+                <img src="https://momolebottier.com/cdn/shop/files/2_ba539590-a801-42d5-b7a1-43b98f1a7519.png?v=1774534840&width=600" alt="Modèle 22" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            </div>
+            <h3 class="font-bold text-gray-900 text-sm md:text-base">MC-S3B</h3>
+            <p class="text-xs md:text-sm font-medium text-gray-500 mt-1">95,000 F CFA</p>
+        </div>
+
+        <!-- Produit 23 -->
+        <div class="group cursor-pointer" onclick="addToCart('Modèle 23', 60000)">
+            <div class="aspect-square rounded-xl overflow-hidden bg-gray-100 mb-3">
+                <img src="https://momolebottier.com/cdn/shop/files/42.png?v=1774545005&width=600" alt="Modèle 23" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            </div>
+            <h3 class="font-bold text-gray-900 text-sm md:text-base">X26</h3>
+            <p class="text-xs md:text-sm font-medium text-gray-500 mt-1">60,000 F CFA</p>
+        </div>
+
+        <!-- Produit 24 -->
+        <div class="group cursor-pointer" onclick="addToCart('Modèle 24', 225000)">
+            <div class="aspect-square rounded-xl overflow-hidden bg-gray-100 bg-gray-100 mb-3">
+                <img src="https://momolebottier.com/cdn/shop/files/1_2edea135-8470-4f82-8026-7b60e85b8d4d.png?v=1787161499&width=600" alt="Modèle 24" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            </div>
+            <h3 class="font-bold text-gray-900 text-sm md:text-base">ABOU</h3>
+            <p class="text-xs md:text-sm font-medium text-gray-500 mt-1">225,000 F CFA</p>
+        </div>
+
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+<footer class="bg-[#FFFFFF] pt-16 pb-12 mt-20 text-gray-800">
+    <div class="max-w-7xl mx-auto px-6 sm:px-10">
+        
+        <!-- Grille principale à 4 colonnes -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+            
+            <!-- Colonne 1 : La Marque (Description + Icônes Réseaux Sociaux) -->
+            <div class="space-y-6">
+                <h3 class="font-bold text-gray-900 text-sm uppercase tracking-wider">La Marque</h3>
+                <p class="text-sm text-gray-600 leading-relaxed space-y-4">
+                    Momo Le Bottier est une marque sénégalaise de chaussures et sacs artisanaux sur-mesure qui fusionnent savoir-faire traditionnel et design contemporain pour un style et un confort exceptionnels.
+                </p>
+                <!-- Icônes des réseaux sociaux -->
+                <div class="flex items-center space-x-4 pt-2">
+                    <a href="#" class="w-8 h-8 rounded-full bg-gray-200/80 flex items-center justify-center text-gray-700 hover:bg-brandBlue hover:text-white transition-colors">
+                        <i class="fab fa-facebook-f text-xs"></i>
+                    </a>
+                    <a href="#" class="w-8 h-8 rounded-full bg-gray-200/80 flex items-center justify-center text-gray-700 hover:bg-brandBlue hover:text-white transition-colors">
+                        <i class="fab fa-instagram text-xs"></i>
+                    </a>
+                    <a href="#" class="w-8 h-8 rounded-full bg-gray-200/80 flex items-center justify-center text-gray-700 hover:bg-brandBlue hover:text-white transition-colors">
+                        <i class="fab fa-tiktok text-xs"></i>
+                    </a>
+                    <a href="#" class="w-8 h-8 rounded-full bg-gray-200/80 flex items-center justify-center text-gray-700 hover:bg-brandBlue hover:text-white transition-colors">
+                        <i class="fab fa-linkedin-in text-xs"></i>
+                    </a>
+                    <a href="#" class="w-8 h-8 rounded-full bg-gray-200/80 flex items-center justify-center text-gray-700 hover:bg-brandBlue hover:text-white transition-colors">
+                        <i class="fab fa-whatsapp text-xs"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Colonne 2 : Liens utiles -->
+            <div>
+                <h3 class="font-bold text-gray-900 text-sm uppercase tracking-wider mb-4">Liens utiles</h3>
+                <ul class="space-y-2.5 text-sm text-gray-600">
+                    <li><a href="#" class="hover:text-brandBlue transition-colors">Conditions Générales</a></li>
+                    <li><a href="#" class="hover:text-brandBlue transition-colors">Politiques de confidentialité</a></li>
+                    <li><a href="#" class="hover:text-brandBlue transition-colors">Livraisons & Retours</a></li>
+                    <li><a href="#" class="hover:text-brandBlue transition-colors">Mentions Légales</a></li>
+                </ul>
+            </div>
+
+            <!-- Colonne 3 : A Propos -->
+            <div>
+                <h3 class="font-bold text-gray-900 text-sm uppercase tracking-wider mb-4">A Propos</h3>
+                <ul class="space-y-2.5 text-sm text-gray-600">
+                    <li><a href="#hommes" class="hover:text-brandBlue transition-colors">Hommes</a></li>
+                    <li><a href="#femmes" class="hover:text-brandBlue transition-colors">Femmes</a></li>
+                    <li><a href="#accessoires" class="hover:text-brandBlue transition-colors">Accessoires</a></li>
+                    <li><a href="#histoire" class="hover:text-brandBlue transition-colors">Notre Histoire</a></li>
+                </ul>
+            </div>
+
+            <!-- Colonne 4 : Newsletter -->
+            <div>
+                <h3 class="font-bold text-gray-900 text-sm uppercase tracking-wider mb-4">Newsletter</h3>
+                <p class="text-sm text-gray-600 mb-4">Inscrivez-vous pour être informé(e) de nos nouveautés et promotions.</p>
+                <form class="space-y-3" onsubmit="event.preventDefault(); alert('Merci pour votre inscription !');">
+                    <input type="email" placeholder="E-mail" class="w-full bg-white border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-brandBlue">
+                    
+                </form>
+            </div>
+
+        </div>
+
+        <!-- Bas du footer (Copyright & Agence) -->
+        <div class="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500">
+            <p>© 2026, Momo Le Bottier. Designed by TEKKI AGENCY</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+        // 1. Gestion de la barre de recherche
+        const searchToggle = document.getElementById('search-toggle');
+        const searchBar = document.getElementById('search-bar');
+        const searchClose = document.getElementById('search-close');
+        const searchInput = document.getElementById('search-input');
+
+        searchToggle.addEventListener('click', () => {
+            searchBar.classList.toggle('hidden');
+            if (!searchBar.classList.contains('hidden')) {
+                searchInput.focus();
+            }
+        });
+
+        searchClose.addEventListener('click', () => {
+            searchBar.classList.add('hidden');
+        });
+
+        // 2. Gestion du menu mobile
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // 3. Défilement fluide vers le catalogue
+        document.getElementById('cta-catalogue').addEventListener('click', (e) => {
+            e.preventDefault();
+            document.getElementById('catalogue').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        // 4. Gestion simple du panier
+        let cart = [];
+        const cartDrawer = document.getElementById('cart-drawer');
+        const cartToggle = document.getElementById('cart-toggle');
+        const cartClose = document.getElementById('cart-close');
+        const cartBackdrop = document.getElementById('cart-backdrop');
+        const cartItemsContainer = document.getElementById('cart-items');
+        const cartCount = document.getElementById('cart-count');
+        const cartTotal = document.getElementById('cart-total');
+
+        function toggleCart() {
+            cartDrawer.classList.toggle('hidden');
+        }
+
+        cartToggle.addEventListener('click', toggleCart);
+        cartClose.addEventListener('click', toggleCart);
+        cartBackdrop.addEventListener('click', toggleCart);
+
+        function addToCart(name, price) {
+            cart.push({ name, price });
+            updateCartUI();
+            cartDrawer.classList.remove('hidden'); // Ouvre le panier lors de l'ajout
+        }
+
+        function updateCartUI() {
+            // Badge compteur
+            if (cart.length > 0) {
+                cartCount.textContent = cart.length;
+                cartCount.classList.remove('hidden');
+            } else {
+                cartCount.classList.add('hidden');
+            }
+
+            // Liste des articles
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = '<p class="text-center text-gray-400 py-8">Votre panier est vide.</p>';
+                cartTotal.textContent = '0 FCFA';
+                return;
+            }
+
+            let total = 0;
+            cartItemsContainer.innerHTML = cart.map((item, index) => {
+                total += item.price;
+                return `
+                    <div class="flex items-center justify-between border-b border-gray-100 pb-2">
+                        <div>
+                            <p class="font-medium text-gray-800">${item.name}</p>
+                            <p class="text-xs text-gray-500">${item.price.toLocaleString()} FCFA</p>
+                        </div>
+                        <button onclick="removeFromCart(${index})" class="text-red-500 text-xs hover:underline">Retirer</button>
+                    </div>
+                `;
+            }).join('');
+
+            cartTotal.textContent = `${total.toLocaleString()} FCFA`;
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCartUI();
+        }
+    </script>
+
+</body>
+</html>

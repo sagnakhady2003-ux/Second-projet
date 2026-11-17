@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histoire</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts pour la typographie élégante -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif'],
+                    },
+                    colors: {
+                        brandBlue: '#3353D8',
+                        brandGold: '#F2B84B',
+                        brandGoldHover: '#E0A435',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Effet subtil sur l'image hero pour garantir la lisibilité du texte blanc */
+        .hero-gradient {
+            background: linear-gradient(90deg, rgba(0,0,0,0.32) 0%, rgba(0,0,0,0.12) 50%, rgba(0,0,0,0) 100%);
+        }
+    </style>
+</head>
+<body class="bg-amber-50 text-gray-800 antialiased">
+
+    <!-- 1. Barre supérieure (Top Bar) -->
+    <div class="bg-blue-900 text-white text-xs py-4 px-4 text-center font-medium tracking-wide">
+        <div class="inline-flex items-center justify-center gap-1.5">
+            <!-- Icône de localisation -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 text-white/90" viewBox="0 0 20 20" fill="currentColor">
+                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+            </svg>
+            <span>186 Avenue Lamine Gueye</span>
+        </div>
+    </div>
+
+    
+    <header class="top-0 z-50 bg-amber-50 py-4">
+        <div class="max-w-7xl mx-auto px-6 sm:px-10 h-24 flex items-center justify-between">
+            
+        
+            <button id="mobile-menu-btn" class="md:hidden text-gray-700 hover:text-brandBlue focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+
+        
+            <a href="#" class="flex items-center group">
+                <div class="w-20 h-20 rounded-full flex flex-col items-center justify-center text-center leading-none transition-transform duration-300 group-hover:scale-105">
+                <img src="img/image1.png" alt="">
+                </div>
+            </a>
+
+        
+            <nav class="hidden md:flex items-center space-x-10 text-sm font-semibold text-black">
+                <a href="homme.html" class="hover:text-blue-900 transition-colors">Hommes</a>
+                <a href="femme.html" class="hover:text-blue-900 transition-colors">Femmes</a>
+                <a href="accessoire.html" class="hover:text-blue-900 transition-colors">Accessoires</a>
+                <a href="histoire.html" class="hover:text-blue-900 transition-colors">Notre Histoire</a>
+                <a href="contact.html" class="hover:text-blue-900 transition-colors">Contact</a>
+            </nav>
+
+            
+            <div class="flex items-center space-x-5 text-gray-600">
+                
+                <button id="search-toggle" aria-label="Rechercher" class="hover:text-brandBlue transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                </button>
+
+                
+                <button onclick="alert('Espace client : Connexion ou Inscription')" aria-label="Compte" class="hover:text-brandBlue transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                    </svg>
+                </button>
+
+                
+                <button id="cart-toggle" aria-label="Panier" class="relative hover:text-brandBlue transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.8">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                    </svg>
+                    <span id="cart-count" class="hidden absolute -top-1.5 -right-2 bg-brandBlue text-white text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center">0</span>
+                </button>
+            </div>
+        </div>
+
+        
+       <div id="search-bar" class="hidden bg-gray-50 border-t border-gray-100 py-3 px-6 transition-all">
+            <div class="max-w-3xl mx-auto flex items-center gap-3">
+                <input type="text" id="search-input" placeholder="Rechercher des richelieus, derbies, mocassins..." class="w-full bg-white border border-gray-300 rounded-full px-4 py-2 text-sm focus:outline-none focus:border-brandBlue">
+                <button id="search-close" class="text-gray-500 hover:text-gray-800 text-sm font-medium">Fermer</button>
+            </div>
+        </div>
+
+    
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-6 py-4 space-y-3 text-sm font-medium text-brandBlue">
+         <a href="homme.html" class="block py-1">Hommes</a>
+            <a href="#femmes" class="block py-1">Femmes</a>
+            <a href="#accessoires" class="block py-1">Accessoires</a>
+            <a href="#histoire" class="block py-1">Notre Histoire</a>
+            <a href="#contact" class="block py-1">Contact</a>
+        </div>
+    </header>
+
+
+<main class="max-w-5xl mx-auto px-6 sm:px-10 py-16 text-center">
+    
+    <h1 class="text-3xl sm:text-4xl md:text-5xl font-serif font-semibold text-gray-900 tracking-tight mb-4 py-10">
+        Notre Histoire
+    </h1>
+
+    
+    <p class="text-lg sm:text-3xl font-medium text-gray-900 mb-10 py-10">
+        Un Voyage d'Amour, de Passion et d'Héritage
+    </p>
+
+    
+    <div class="w-full h-[320px] sm:h-[460px] rounded-2xl overflow-hidden shadow-md mb-10 bg-gray-200">
+        <img 
+            src="img/image14.png" 
+            alt="Notre Histoire - Momo Le Bottier" 
+            class="w-full h-full object-cover object-center"
+        >
+    </div>
+    <div class="max-2xl mx-auto text-gray-700 space-y-6 text-base sm:text-lg leading-relaxed text-left">
+        <p>Momo Le Bottier se distingue comme une marque emblématique qui fusionne l'excellence de l'artisanat traditionnel avec l'élégance unique de l'Afrique. Au cœur de Dakar, notre atelier est le berceau d'une aventure passionnée débutée en 2001, au sein d'une famille où l'art de travailler le cuir se transmet de génération en génération.</p>
+
+<p>La genèse de notre marque trouve ses racines dans l'enfance de Mouhamadou Moustapha Thiam, co-fondateur de Momo Le Bottier. Dès l'âge de 9 ans, il s'immerge dans l'univers de la cordonnerie sous l'aile de son beau-père, reconnu comme le maître bottier de son époque. Cette double vie, partagée entre les bancs d'école et l'atelier, forgea en lui une vocation indéfectible.
+</p>
+    </div>
+    
+<div  class="mt-16 w-full h-[200px] sm:h-[460px] rounded-sm overflow-hidden shadow-md mb-10 bg-gray-200">
+
+<img src="https://cdn.shopify.com/s/files/1/0639/7748/8561/files/3.jpg?v=1705937172" alt="" >
+</div>
+
+<div  class="max-xl mx-auto text-gray-700 space-y-6 text-base sm:text-lg leading-relaxed text-left">
+
+    <p>C'est aux côtés de Maguette, son épouse, que Mouhamadou décide de franchir un nouveau cap après leurs études supérieures. Ensemble, en 2019, ils fondent Momo Le Bottier, avec l'ambition de réinventer l'artisanat de la chaussure. Leur alliance, marquée par la patience, la détermination et une expertise en constante évolution, est animée par une passion commune pour l'artisanat. Chaque création est le fruit de leur collaboration : Mouhamadou, l'artisan du cuir par excellence, et Maguette, dont le sens du détail insuffle élégance et finesse à leurs œuvres.</p>
+
+<p>Chaque paire de chaussures est une narration, un assemblage méticuleux où chaque élément, du choix du cuir à la touche finale, est empreint d'amour et de dévouement. Momo Le Bottier, c'est l'expression d'années d'expérience, d'un savoir-faire ancestral, d'une passion ardente et d'un profond respect pour notre héritage.</p>
+</div>
+
+<div  class="mt-16 w-full h-[200px] sm:h-[460px] rounded-sm overflow-hidden shadow-md mb-10 bg-gray-200">
+
+<img src="https://cdn.shopify.com/s/files/1/0639/7748/8561/files/momolebottier_1705937632338.jpg?v=1706988717" alt="" >
+</div>
+
+<div  class="max-xl mx-auto text-gray-700 space-y-6 text-base sm:text-lg leading-relaxed text-left">
+
+    <p>
+        Le couple, toujours en quête d'innovation, continue d'explorer de nouveaux horizons, fusionnant modernité et tradition, luxe et simplicité. La philosophie de Momo Le Bottier repose sur le respect de l'artisanat et l'engagement envers le bien-être de nos clients. Nous aspirons à offrir plus qu'une simple élégance : des produits de qualité supérieure qui favorisent le bien-être de ceux qui les portent.</p>
+
+<p>Bienvenue chez Momo Le Bottier, où chaque création place votre bien-être au cœur de notre univers.</p>
+</div>
+</main>
+
+
+
+    <footer class="bg-[#FFFFFF] pt-16 pb-12 mt-20 text-gray-800">
+    <div class="max-w-7xl mx-auto px-6 sm:px-10">
+        
+        <!-- Grille principale à 4 colonnes -->
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+            
+            <!-- Colonne 1 : La Marque (Description + Icônes Réseaux Sociaux) -->
+            <div class="space-y-6">
+                <h3 class="font-bold text-gray-900 text-sm uppercase tracking-wider">La Marque</h3>
+                <p class="text-sm text-gray-600 leading-relaxed space-y-4">
+                    Momo Le Bottier est une marque sénégalaise de chaussures et sacs artisanaux sur-mesure qui fusionnent savoir-faire traditionnel et design contemporain pour un style et un confort exceptionnels.
+                </p>
+                <!-- Icônes des réseaux sociaux -->
+                <div class="flex items-center space-x-4 pt-2">
+                    <a href="#" class="w-8 h-8 rounded-full bg-gray-200/80 flex items-center justify-center text-gray-700 hover:bg-brandBlue hover:text-white transition-colors">
+                        <i class="fab fa-facebook-f text-xs"></i>
+                    </a>
+                    <a href="#" class="w-8 h-8 rounded-full bg-gray-200/80 flex items-center justify-center text-gray-700 hover:bg-brandBlue hover:text-white transition-colors">
+                        <i class="fab fa-instagram text-xs"></i>
+                    </a>
+                    <a href="#" class="w-8 h-8 rounded-full bg-gray-200/80 flex items-center justify-center text-gray-700 hover:bg-brandBlue hover:text-white transition-colors">
+                        <i class="fab fa-tiktok text-xs"></i>
+                    </a>
+                    <a href="#" class="w-8 h-8 rounded-full bg-gray-200/80 flex items-center justify-center text-gray-700 hover:bg-brandBlue hover:text-white transition-colors">
+                        <i class="fab fa-linkedin-in text-xs"></i>
+                    </a>
+                    <a href="#" class="w-8 h-8 rounded-full bg-gray-200/80 flex items-center justify-center text-gray-700 hover:bg-brandBlue hover:text-white transition-colors">
+                        <i class="fab fa-whatsapp text-xs"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Colonne 2 : Liens utiles -->
+            <div>
+                <h3 class="font-bold text-gray-900 text-sm uppercase tracking-wider mb-4">Liens utiles</h3>
+                <ul class="space-y-2.5 text-sm text-gray-600">
+                    <li><a href="#" class="hover:text-brandBlue transition-colors">Conditions Générales</a></li>
+                    <li><a href="#" class="hover:text-brandBlue transition-colors">Politiques de confidentialité</a></li>
+                    <li><a href="#" class="hover:text-brandBlue transition-colors">Livraisons & Retours</a></li>
+                    <li><a href="#" class="hover:text-brandBlue transition-colors">Mentions Légales</a></li>
+                </ul>
+            </div>
+
+            <!-- Colonne 3 : A Propos -->
+            <div>
+                <h3 class="font-bold text-gray-900 text-sm uppercase tracking-wider mb-4">A Propos</h3>
+                <ul class="space-y-2.5 text-sm text-gray-600">
+                    <li><a href="#hommes" class="hover:text-brandBlue transition-colors">Hommes</a></li>
+                    <li><a href="#femmes" class="hover:text-brandBlue transition-colors">Femmes</a></li>
+                    <li><a href="#accessoires" class="hover:text-brandBlue transition-colors">Accessoires</a></li>
+                    <li><a href="#histoire" class="hover:text-brandBlue transition-colors">Notre Histoire</a></li>
+                </ul>
+            </div>
+
+            <!-- Colonne 4 : Newsletter -->
+            <div>
+                <h3 class="font-bold text-gray-900 text-sm uppercase tracking-wider mb-4">Newsletter</h3>
+                <p class="text-sm text-gray-600 mb-4">Inscrivez-vous pour être informé(e) de nos nouveautés et promotions.</p>
+                <form class="space-y-3" onsubmit="event.preventDefault(); alert('Merci pour votre inscription !');">
+                    <input type="email" placeholder="E-mail" class="w-full bg-white border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:outline-none focus:border-brandBlue">
+                    
+                </form>
+            </div>
+
+        </div>
+
+        <!-- Bas du footer (Copyright & Agence) -->
+        <div class="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500">
+            <p>© 2026, Momo Le Bottier. Designed by TEKKI AGENCY</p>
+        </div>
+    </div>
+</footer>
+
+
+
+
+
+
+
+<script>
+        // 1. Gestion de la barre de recherche
+        const searchToggle = document.getElementById('search-toggle');
+        const searchBar = document.getElementById('search-bar');
+        const searchClose = document.getElementById('search-close');
+        const searchInput = document.getElementById('search-input');
+
+        searchToggle.addEventListener('click', () => {
+            searchBar.classList.toggle('hidden');
+            if (!searchBar.classList.contains('hidden')) {
+                searchInput.focus();
+            }
+        });
+
+        searchClose.addEventListener('click', () => {
+            searchBar.classList.add('hidden');
+        });
+
+        // 2. Gestion du menu mobile
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // 3. Défilement fluide vers le catalogue
+        document.getElementById('cta-catalogue').addEventListener('click', (e) => {
+            e.preventDefault();
+            document.getElementById('catalogue').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        // 4. Gestion simple du panier
+        let cart = [];
+        const cartDrawer = document.getElementById('cart-drawer');
+        const cartToggle = document.getElementById('cart-toggle');
+        const cartClose = document.getElementById('cart-close');
+        const cartBackdrop = document.getElementById('cart-backdrop');
+        const cartItemsContainer = document.getElementById('cart-items');
+        const cartCount = document.getElementById('cart-count');
+        const cartTotal = document.getElementById('cart-total');
+
+        function toggleCart() {
+            cartDrawer.classList.toggle('hidden');
+        }
+
+        cartToggle.addEventListener('click', toggleCart);
+        cartClose.addEventListener('click', toggleCart);
+        cartBackdrop.addEventListener('click', toggleCart);
+
+        function addToCart(name, price) {
+            cart.push({ name, price });
+            updateCartUI();
+            cartDrawer.classList.remove('hidden'); // Ouvre le panier lors de l'ajout
+        }
+
+        function updateCartUI() {
+            // Badge compteur
+            if (cart.length > 0) {
+                cartCount.textContent = cart.length;
+                cartCount.classList.remove('hidden');
+            } else {
+                cartCount.classList.add('hidden');
+            }
+
+            // Liste des articles
+            if (cart.length === 0) {
+                cartItemsContainer.innerHTML = '<p class="text-center text-gray-400 py-8">Votre panier est vide.</p>';
+                cartTotal.textContent = '0 FCFA';
+                return;
+            }
+
+            let total = 0;
+            cartItemsContainer.innerHTML = cart.map((item, index) => {
+                total += item.price;
+                return `
+                    <div class="flex items-center justify-between border-b border-gray-100 pb-2">
+                        <div>
+                            <p class="font-medium text-gray-800">${item.name}</p>
+                            <p class="text-xs text-gray-500">${item.price.toLocaleString()} FCFA</p>
+                        </div>
+                        <button onclick="removeFromCart(${index})" class="text-red-500 text-xs hover:underline">Retirer</button>
+                    </div>
+                `;
+            }).join('');
+
+            cartTotal.textContent = `${total.toLocaleString()} FCFA`;
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCartUI();
+        }
+    </script>
+
+</body>
+</html>

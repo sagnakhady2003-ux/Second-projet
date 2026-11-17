@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Momo Le Bottier</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brandBg: '#F4F0EA',
+                        brandBlue: '#2B3990',
+                        brandAccent: '#F2994A',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white text-gray-800 antialiased font-sans flex flex-col min-h-screen">
+
+
+    <!-- Header style WhatsApp -->
+<header class="sticky top-0 z-50 bg-white backdrop-blur-md py-6">
+    <div class="max-w-7xl mx-auto px-6 sm:px-10 h-20 flex items-center justify-between">
+        
+        <!-- 1. Logo à gauche -->
+        <a href="#" class="flex items-center space-x-3 text-[#25D366] font-bold text-2xl">
+            <i class="fab fa-whatsapp text-4xl"></i>
+            <span class="tracking-tight">WhatsApp</span>
+        </a>
+
+        <!-- 2. Menu de navigation au centre -->
+        <nav class="hidden lg:flex items-center space-x-7 text-sm font-medium text-gray-800">
+            <a href="#" class="flex items-center hover:underline text-xl">
+                Fonctionnalités <i class="fas fa-chevron-down text-[15px] ml-2"></i>
+            </a>
+    <a href="#" class="hover:underline text-xl">Privacy</a>
+     <a href="#" class="hover:underline text-xl">Blog</a>
+     <a href="#" class="hover:underline text-xl">Apps</a>
+
+            <a href="#" class="flex items-center hover:underline text-xl">
+                Help Center <i class="fas fa-arrow-up-right-from-square text-[10px] ml-1.5"></i>
+            </a>
+        </nav>
+
+        <!-- 3. Boutons d'action à droite -->
+        <div class="flex items-center space-x-4 text-sm font-medium">
+            <!-- Lien Pour les entreprises -->
+            <a href="#" class="hidden sm:flex items-center text-gray-800 hover:underline mr-2 text-xl">
+                Pour les entreprises <i class="fas fa-arrow-up-right-from-square text-[10px] ml-1.5"></i>
+            </a>
+
+            <!-- Bouton Log in (contour arrondi) -->
+            <a href="#" class="px-3 py-2 rounded-full border border-gray-800 bg-white text-gray-900 hover:bg-gray-100 transition-colors flex items-center">
+                Log in <i class="fas fa-chevron-right text-[10px] ml-2"></i>
+            </a>
+
+            <!-- Bouton Download (fond vert arrondi) -->
+            <a href="#" class="px-5 py-2.5 rounded-full bg-[#25D366] border border-gray-800 text-gray-900 hover:bg-[#20bd5a] transition-colors flex items-center">
+                Download <i class="fas fa-download text-xs ml-2"></i>
+            </a>
+        </div>
+
+    </div>
+</header>
+
+    <!-- 3. CONTENU PRINCIPAL : CONTACT (Inspiré de la page WhatsApp) -->
+    <main class="flex-grow flex items-center justify-center px-6 py-16">
+        <div class="max-w-md w-full text-center space-y-6">
+            
+            <!-- Logo rond centré -->
+            <div class="w-24 h-24 mx-auto rounded-full bg-gray-900 border-sm border-[#F2994A] flex items-center justify-center shadow-md py-6">
+
+            <img src="https://pps.whatsapp.net/v/t61.24694-24/586422011_1520015096003176_1866945512848818891_n.jpg?ccb=11-4&oh=01_Q5Aa6AExWPMS8qGKDKMQPiEZ5Wy96hdoRvoF1EG-4ANBDlGK4A&oe=6B00746D&_nc_sid=5e03e0&_nc_cat=101" alt="logo" class="w-full h-full object-cover rounded-full">
+
+            </div>
+
+            <!-- Nom de la marque -->
+            <div>
+                <h1 class="text-2xl font-bold text-gray-900">Momo Le Bottier</h1>
+            </div>
+
+            <!-- Boutons d'action style WhatsApp -->
+            <div class="space-y-6 pt-2">
+                <!-- Bouton vert principal -->
+                <a href="https://api.whatsapp.com/send?phone=221777663478" target="_blank" class="block max-w-xs mx-auto bg-[#25D366] hover:bg-[#20bd5a] text-white font-semibold text-sm py-3 px-3 rounded-full shadow-sm transition-colors">
+                    <i class="fab fa-whatsapp mr-2 text-base"></i> Ouvrir l'application WhatsApp
+                </a>
+
+                <!-- Bouton secondaire contour -->
+                <a href="https://web.whatsapp.com/send?phone=221777663478" target="_blank" class="block max-w-xs mx-auto bg-transparent hover:bg-gray-200/70 text-gray-800 border border-gray-400 font-medium text-sm py-3 px-6 rounded-full transition-colors">
+                    Continuer vers WhatsApp Web
+                </a>
+            </div>
+
+            <!-- Lien de téléchargement en bas -->
+            <div class="border-gray-300/60 text-xs text-gray-900">
+                <p>
+                    <i class="fab fa-whatsapp text-[#25D366] text-2xl mr-1"></i>
+                    Vous n'avez pas l'application ? 
+                    <a href="https://www.whatsapp.com/download" target="_blank" class="underline font-semibold text-xs text-gray-900 hover:text-[#25D366]">
+                    Téléchargez l'application maintenant
+                    </a>
+                </p>
+            </div>
+
+            
+
+
+
+        </div>
+    </main>
+
+   
+
+
+    <!-- Footer sombre style WhatsApp -->
+<footer class="bg-[#111B21] text-gray-400 text-sm pt-16 pb-16 border-t border-gray-800">
+    <div class="max-w-7xl mx-auto px-6 sm:px-10">
+        
+        <!-- Grille principale à 4 colonnes + Logo/Bouton -->
+        <div class="grid grid-cols-1 md:grid-cols-5 gap-10 mb-16">
+            
+            <!-- Colonne 1 : Logo & Bouton Télécharger -->
+            <div class="md:col-span-1 space-y-6">
+                <div class="flex items-center space-x-2 text-white font-bold text-lg">
+                    <i class="fab fa-whatsapp text-5xl text-green-500"></i>
+                    <span>WhatsApp</span>
+                </div>
+                <a href="https://www.whatsapp.com/download" target="_blank" class="inline-flex items-center justify-center bg-green-500 hover:bg-[#06cf9c] text-gray-900 font-semibold text-sm py-3 px-9 rounded-full transition-colors shadow-sm">
+                    <i class="fas fa-download mr-2"></i> Télécharger
+                </a>
+            </div>
+
+            <!-- Colonne 2 : Notre entreprise -->
+            <div class="space-y-4">
+                <h4 class="text-gray-600 text-sm uppercase tracking-wider">Notre entreprise</h4>
+                <ul class="space-y-2.5 text-xl text-white">
+                    <li><a href="#" class="hover:text-white transition-colors">Fonctionnalités</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Blog</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Sécurité</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Pour les entreprises</a></li>
+                </ul>
+            </div>
+
+            <!-- Colonne 3 : Qui sommes-nous ? -->
+            <div class="space-y-4">
+                <h4 class="text-gray-600 text-sm uppercase tracking-wider">Qui sommes-nous ?</h4>
+                <ul class="space-y-2.5 text-xl text-white">
+                    <li><a href="#" class="hover:text-white transition-colors">À propos de nous</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Emplois</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Espace Marque</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Confidentialité</a></li>
+                </ul>
+            </div>
+
+            <!-- Colonne 4 : Utiliser WhatsApp -->
+            <div class="space-y-4">
+                <h4 class="text-gray-600 text-sm uppercase tracking-wider">Utiliser WhatsApp</h4>
+                <ul class="space-y-2.5 text-xl text-white">
+                    <li><a href="#" class="hover:text-white transition-colors">Mobile</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Ordinateur</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Tablette</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">WhatsApp Web</a></li>
+                </ul>
+            </div>
+
+            <!-- Colonne 5 : Besoin d'aide ? -->
+            <div class="space-y-4">
+                <h4 class="text-gray-600 text-sm uppercase tracking-wider">Besoin d'aide ?</h4>
+                <ul class="space-y-2.5 text-xl text-white">
+                    <li><a href="#" class="hover:text-white transition-colors">Nous contacter</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Pages d'aide</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Applications</a></li>
+                    <li><a href="#" class="hover:text-white transition-colors">Avis de sécurité</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- Ligne de séparation et bas de footer -->
+        <div class="border-t border-green-800 pt-8 flex flex-col md:flex-row items-center justify-between text-sm space-y-4 md:space-y-0">
+            
+            <!-- Copyright et conditions -->
+            <div class="flex flex-wrap items-center space-x-6 text-gray-500">
+                <span>&copy; 2026 WhatsApp LLC</span>
+                <a href="#" class="hover:text-white transition-colors">Conditions générales et politique de confidentialité</a>
+                <a href="#" class="hover:text-white transition-colors">Plan du site</a>
+            </div>
+
+            <!-- Icônes rondes des réseaux sociaux au centre/droite -->
+            <div class="flex items-center space-x-6">
+                <a href="#" class="w-9 h-9 rounded-full bg-[#222E35] flex items-center justify-center text-white hover:bg-[#374248] transition-colors">
+            <i class="fa-brands fa-x-twitter" style="color: #ffffff;"></i>
+                </a>
+                <a href="#" class="w-9 h-9 rounded-full bg-[#222E35] flex items-center justify-center text-gray-300 hover:bg-[#374248] transition-colors"><i class="fab fa-youtube text-xs"></i></a>
+                <a href="#" class="w-9 h-9 rounded-full bg-[#222E35] flex items-center justify-center text-gray-300 hover:bg-[#374248] transition-colors"><i class="fab fa-instagram text-xs"></i></a>
+                <a href="#" class="w-9 h-9 rounded-full bg-[#222E35] flex items-center justify-center text-gray-300 hover:bg-[#374248] transition-colors"><i class="fab fa-facebook-f text-xs"></i></a>
+                <a href="#" class="w-9 h-9 rounded-full bg-[#222E35] flex items-center justify-center text-gray-300 hover:bg-[#374248] transition-colors"><i class="fab fa-whatsapp text-xs"></i></a>
+            </div>
+
+        </div>
+
+    </div>
+</footer>
+</body>
+</html>
